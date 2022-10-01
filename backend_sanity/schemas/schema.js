@@ -17,5 +17,6 @@ export default createSchema({
     property,
     propertyImage,
     person,
+    host,
   ]),
 })

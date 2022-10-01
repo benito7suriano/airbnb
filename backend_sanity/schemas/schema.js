@@ -16,5 +16,6 @@ export default createSchema({
     /* Your types here! */
     property,
     propertyImage,
+    person,
   ]),
 })

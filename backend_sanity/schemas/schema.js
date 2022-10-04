@@ -8,6 +8,7 @@ import propertyImage from './propertyImage'
 import person from './person'
 import host from './host'
 import traveller from './traveller'
+import review from './review'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -22,5 +23,6 @@ export default createSchema({
     person,
     host,
     traveller,
+    review,
   ]),
 })

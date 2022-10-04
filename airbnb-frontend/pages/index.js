@@ -1,3 +1,7 @@
-export default function Home() {
+import { sanityClient } from '../sanity'
+
+const Home = () => {
   return <></>
 }
+
+export default Home

@@ -43,7 +43,12 @@ export default {
     { name: 'id', title: 'ID', type: 'number' },
     { name: 'description', title: 'Description', type: 'string' },
     { name: 'host', title: 'Host', type: 'host' },
-    // {name: 'reviews', title:'Reviews',type:'array',of:[{type:'review'}]},
+    {
+      name: 'reviews',
+      title: 'Reviews',
+      type: 'array',
+      of: [{ type: 'review' }],
+    },
   ],
   preview: {
     select: {

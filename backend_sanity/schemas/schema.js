@@ -18,5 +18,6 @@ export default createSchema({
     propertyImage,
     person,
     host,
+    traveller,
   ]),
 })

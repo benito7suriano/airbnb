@@ -1,7 +1,11 @@
-const Image = ({ identifier }) => {
+import { urlFor } from '../sanity'
+
+const Image = ({ identifier, image }) => {
   return (
     <div className={identifier === 'main-image' ? 'main-image' : 'image'}>
-      <img src='' alt='' />
+      <img src={urlFor(image)} alt={`${image}`} />
     </div>
   )
 }
+
+export default Image

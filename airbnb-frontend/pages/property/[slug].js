@@ -13,7 +13,21 @@ const Property = ({
   host,
   reviews,
 }) => {
-  return <h1>{title}</h1>
+  return (
+    <div className='container'>
+      <h1>
+        <b>{title}</b>
+      </h1>
+      <h2>
+        <b>
+          {propertyType} hosted by {host?.name}
+        </b>
+      </h2>
+      <h4>
+        {bedrooms} bedroom • {beds} bed
+      </h4>
+    </div>
+  )
 }
 
 export const getServerSideProps = async (pageContext) => {

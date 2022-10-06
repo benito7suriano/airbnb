@@ -1,4 +1,5 @@
 import { sanityClient } from '../../sanity'
+import { isMultiple } from '../../utils'
 
 const Property = ({
   title,
@@ -24,7 +25,7 @@ const Property = ({
         </b>
       </h2>
       <h4>
-        {bedrooms} bedroom • {beds} bed
+        {bedrooms} bedroom{isMultiple(bedrooms)} • {beds} bed{isMultiple(beds)}
       </h4>
     </div>
   )

@@ -1,6 +1,7 @@
 import { sanityClient } from '../../sanity'
 import { isMultiple } from '../../utils'
 import Image from '../../components/Image'
+import Review from '../../components/Review'
 const Property = ({
   title,
   location,
@@ -32,45 +33,64 @@ const Property = ({
           ))}
         </div>
       </div>
-      <h2>
-        <b>
-          {propertyType} hosted by {host?.name}
-        </b>
-      </h2>
-      <h4>
-        {bedrooms} bedroom{isMultiple(bedrooms)} • {beds} bed{isMultiple(beds)}
-      </h4>
-      <hr />
-      <h4>
-        <b>Enhanced Clean</b>
-      </h4>
-      <p>
-        This host is committed to Airbnb's 5-step enhanced cleaning process.
-      </p>
-      <h4>
-        <b>Amenities for everyday living</b>
-      </h4>
-      <p>
-        The host has equipped this place for long stays - kitchen, shampoo,
-        conditioner, hairdryer included.
-      </p>
-      <h4>
-        <b>House rules</b>
-      </h4>
-      <p>
-        This place isn't suitable for pets andthe host does not allow parties or
-        smoking.
-      </p>
 
-      <div className='price-box'>
-        <h2>${pricePerNight}</h2>
-        <h4>
-          {reviewAmount} review{isMultiple(reviewAmount)}
-        </h4>
-        <div className='button' onClick={() => {}}>
-          Change Dates
+      <div className='section'>
+        <div className='information'>
+          <h2>
+            <b>
+              {propertyType} hosted by {host?.name}
+            </b>
+          </h2>
+          <h4>
+            {bedrooms} bedroom{isMultiple(bedrooms)} • {beds} bed
+            {isMultiple(beds)}
+          </h4>
+          <hr />
+          <h4>
+            <b>Enhanced Clean</b>
+          </h4>
+          <p>
+            This host is committed to Airbnb's 5-step enhanced cleaning process.
+          </p>
+          <h4>
+            <b>Amenities for everyday living</b>
+          </h4>
+          <p>
+            The host has equipped this place for long stays - kitchen, shampoo,
+            conditioner, hairdryer included.
+          </p>
+          <h4>
+            <b>House rules</b>
+          </h4>
+          <p>
+            This place isn't suitable for pets andthe host does not allow
+            parties or smoking.
+          </p>
+        </div>
+        <div className='price-box'>
+          <h2>${pricePerNight}</h2>
+          <h4>
+            {reviewAmount} review{isMultiple(reviewAmount)}
+          </h4>
+          <div className='button' onClick={() => {}}>
+            Change Dates
+          </div>
         </div>
       </div>
+
+      <hr />
+
+      <h4>{description}</h4>
+
+      <hr />
+
+      <h2>
+        {reviewAmount} review{isMultiple(reviewAmount)}
+      </h2>
+      {reviewAmount > 0 &&
+        reviews.map((review) => <Review key={review._key} review={review} />)}
+
+      <hr />
     </div>
   )
 }

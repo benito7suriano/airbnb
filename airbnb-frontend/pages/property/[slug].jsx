@@ -21,6 +21,10 @@ const Property = ({
       <h1>
         <b>{title}</b>
       </h1>
+      <p>
+        {reviewAmount} review{isMultiple(reviewAmount)}
+      </p>
+      <div className='images-section'></div>
       <h2>
         <b>
           {propertyType} hosted by {host?.name}

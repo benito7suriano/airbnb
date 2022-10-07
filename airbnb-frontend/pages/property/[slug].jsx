@@ -91,6 +91,8 @@ const Property = ({
         reviews.map((review) => <Review key={review._key} review={review} />)}
 
       <hr />
+
+      <h2>Location</h2>
     </div>
   )
 }

@@ -2,6 +2,8 @@ import { sanityClient } from '../../sanity'
 import { isMultiple } from '../../utils'
 import Image from '../../components/Image'
 import Review from '../../components/Review'
+import Map from '../../components/Map'
+
 const Property = ({
   title,
   location,
@@ -93,6 +95,7 @@ const Property = ({
       <hr />
 
       <h2>Location</h2>
+      <Map location={location}></Map>
     </div>
   )
 }

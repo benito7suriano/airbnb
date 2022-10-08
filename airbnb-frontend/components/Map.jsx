@@ -1,21 +1,21 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
 
-const containerStyle = {
-  width: '400px',
-  height: '400px',
-}
-
-const center = {
-  lat: -3.745,
-  lng: -38.523,
-}
-
-function MyComponent() {
+const Map = ({ location }) => {
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: 'YOUR_API_KEY',
+    googleMapsApiKey: process.env.NEXT_PUBLIC_googleMapsApiKey,
   })
+
+  const containerStyle = {
+    width: '400px',
+    height: '400px',
+  }
+
+  const center = {
+    lat: location.lat,
+    lng: location.lng,
+  }
 
   const [map, setMap] = React.useState(null)
 
@@ -44,4 +44,4 @@ function MyComponent() {
   )
 }
 
-export default React.memo(MyComponent)
+export default React.memo(Map)

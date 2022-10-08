@@ -1,7 +1,6 @@
 import { sanityClient } from '../sanity'
 
 const Home = ({ properties }) => {
-  console.log(properties)
   return <></>
 }
 

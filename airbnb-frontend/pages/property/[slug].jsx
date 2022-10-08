@@ -3,6 +3,7 @@ import { isMultiple } from '../../utils'
 import Image from '../../components/Image'
 import Review from '../../components/Review'
 import Map from '../../components/Map'
+import Link from 'next/link'
 
 const Property = ({
   title,
@@ -74,9 +75,11 @@ const Property = ({
           <h4>
             {reviewAmount} review{isMultiple(reviewAmount)}
           </h4>
-          <div className='button' onClick={() => {}}>
-            Change Dates
-          </div>
+          <Link href='/'>
+            <div className='button' onClick={() => {}}>
+              Change Dates
+            </div>
+          </Link>
         </div>
       </div>
 

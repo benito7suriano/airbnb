@@ -1,14 +1,16 @@
 import React from 'react'
-import { GoogleMap, useJsApiLoader } from '@react-google-maps/api'
+import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api'
 
 const Map = ({ location }) => {
+  const [map, setMap] = React.useState(null)
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: process.env.NEXT_PUBLIC_googleMapsApiKey,
   })
 
   const containerStyle = {
-    width: '400px',
+    width: '100%',
     height: '400px',
   }
 
@@ -16,8 +18,6 @@ const Map = ({ location }) => {
     lat: location.lat,
     lng: location.lng,
   }
-
-  const [map, setMap] = React.useState(null)
 
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds(center)
@@ -29,6 +29,9 @@ const Map = ({ location }) => {
     setMap(null)
   }, [])
 
+  const image =
+    'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+
   return isLoaded ? (
     <GoogleMap
       mapContainerStyle={containerStyle}
@@ -37,7 +40,7 @@ const Map = ({ location }) => {
       onLoad={onLoad}
       onUnmount={onUnmount}>
       {/* Child components, such as markers, info windows, etc. */}
-      <></>
+      <Marker position={{ lat: location.lat, lng: location.lng }} />
     </GoogleMap>
   ) : (
     <></>
